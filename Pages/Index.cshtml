@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<div class="text-center">
+    <img src="images/Sentiment-analysis.jpg" width="500" height="200" />
+    <h1 class="display-4">Welcome to IMDB Review Prediction</h1>
+
+    <h3>This webpage provides predictive sentiment based on a movie review.</h3>
+    <p>The Machine Learning Model can be found <a href="https://gallery.azure.ai/Experiment/Binary-Classification-IMDB-Review-Sentiment-Analysis">Azure AI Gallery</a></p>
+    <p>The Dataset used for this machine learning model can be found <a href="https://www.kaggle.com/iarunava/imdb-movie-reviews-dataset">Kaggle</a></p>
+    <br />
+    <form method="post" id="usrform">
+        <textarea name="review" form="usrform" cols="70" rows="5"></textarea><br />
+        <input type="submit" class="btn btn-primary" value="Predict!" name="submit">
+    </form>
+    <br />
+    Review is: <h3>@Model.Review</h3> <br />
+    Sentiment is:
+    @if (Model.Sentiment == "Positive")
+    {
+    <h3 style="color:blue;">@Model.Sentiment</h3>
+    }
+    else
+    {
+    <h3 style="color:red;">@Model.Sentiment</h3>
+    }
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
